@@ -1,56 +1,59 @@
-MAXSTACK=100 #å®šä¹‰å †æ ˆçš„æœ€å¤§å®¹é‡
-global stack
-stack=[None]*MAXSTACK  #å †æ ˆçš„æ•°ç»„å£°æ˜
-top=-1 #å †æ ˆçš„é¡¶ç«¯
+# -*- coding: gbk -*-
 
-#åˆ¤æ–­æ˜¯å¦ä¸ºç©ºå †æ ˆ
+
+MAXSTACK=100 #¶¨Òå¶ÑÕ»µÄ×î´óÈİÁ¿
+global stack
+stack=[None]*MAXSTACK  #¶ÑÕ»µÄÊı×éÉùÃ÷
+top=-1 #¶ÑÕ»µÄ¶¥¶Ë
+
+#ÅĞ¶ÏÊÇ·ñÎª¿Õ¶ÑÕ»
 def isEmpty():
     if top==-1:
         return True
     else:
         return False
 
-#å°†æŒ‡å®šçš„æ•°æ®å‹å…¥å †æ ˆ
+#½«Ö¸¶¨µÄÊı¾İÑ¹Èë¶ÑÕ»
 def push(data):
     global top
     global MAXSTACK
     global stack
     if top>=MAXSTACK-1:
-        print('å †æ ˆå·²æ»¡,æ— æ³•å†åŠ å…¥')
+        print('¶ÑÕ»ÒÑÂú,ÎŞ·¨ÔÙ¼ÓÈë')
     else:
         top +=1
-        stack[top]=data #å°†æ•°æ®å‹å…¥å †æ ˆ
+        stack[top]=data #½«Êı¾İÑ¹Èë¶ÑÕ»
 
-#ä»å †æ ˆå¼¹å‡ºæ•°æ®*/
+#´Ó¶ÑÕ»µ¯³öÊı¾İ*/
 def pop():
     global top
     global stack
     if isEmpty():
-        print('å †æ ˆæ˜¯ç©º')
+        print('¶ÑÕ»ÊÇ¿Õ')
     else:
-        print('å¼¹å‡ºçš„å…ƒç´ ä¸º: %d' % stack[top])
+        print('µ¯³öµÄÔªËØÎª: %d' % stack[top])
         top=top-1     
         
-#ä¸»ç¨‹åº
+#Ö÷³ÌĞò
 i=2
 count=0
 while True:
-    i=int(input('è¦å‹å…¥å †æ ˆ,è¯·è¾“å…¥1,è¦å¼¹å‡ºåˆ™è¾“å…¥0,åœæ­¢æ“ä½œåˆ™è¾“å…¥-1: '))
+    i=int(input('ÒªÑ¹Èë¶ÑÕ»,ÇëÊäÈë1,Òªµ¯³öÔòÊäÈë0,Í£Ö¹²Ù×÷ÔòÊäÈë-1: '))
     if i==-1:
         break
     elif i==1:
-        value=int(input('è¯·è¾“å…¥å…ƒç´ å€¼:'))
+        value=int(input('ÇëÊäÈëÔªËØÖµ:'))
         push(value)
     elif i==0:
         pop()
 
 print('============================')
 if top <0:
-    print('\n å †æ ˆæ˜¯ç©ºçš„')
+    print('\n ¶ÑÕ»ÊÇ¿ÕµÄ')
 else:
     i=top
     while i>=0:
-        print('å †æ ˆå¼¹å‡ºçš„é¡ºåºä¸º:%d' %(stack[i]))
+        print('¶ÑÕ»µ¯³öµÄË³ĞòÎª:%d' %(stack[i]))
         count +=1
         i =i-1
     print 

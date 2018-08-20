@@ -1,17 +1,20 @@
+# -*- coding: gbk -*-
+from __future__ import print_function
+
 global queen
 global number
-EIGHT=8 #å®šä¹‰å †æ ˆçš„æœ€å¤§å®¹é‡
-queen=[None]*8 #å­˜æ”¾8ä¸ªçš‡åçš„è¡Œä½ç½®
+EIGHT=8 #¶¨Òå¶ÑÕ»µÄ×î´óÈİÁ¿
+queen=[None]*8 #´æ·Å8¸ö»ÊºóµÄĞĞÎ»ÖÃ
 
-number=0    #è®¡ç®—æ€»å…±æœ‰å‡ ç»„è§£çš„æ€»æ•°
-#å†³å®šçš‡åå­˜æ”¾çš„ä½ç½®
-#è¾“å‡ºæ‰€éœ€è¦çš„ç»“æœ
+number=0    #¼ÆËã×Ü¹²ÓĞ¼¸×é½âµÄ×ÜÊı
+#¾ö¶¨»Êºó´æ·ÅµÄÎ»ÖÃ
+#Êä³öËùĞèÒªµÄ½á¹û
 def print_table():
     global number
     x=y=0
     number+=1
     print('')
-    print('å…«çš‡åé—®é¢˜çš„ç¬¬%dç»„è§£\t' %number)
+    print('°Ë»ÊºóÎÊÌâµÄµÚ%d×é½â\t' %number)
     for x in range(EIGHT):
         for y in range(EIGHT):
             if x==queen[y]:
@@ -19,10 +22,10 @@ def print_table():
             else:
                 print('<->',end='')
         print('\t')
-    input('\n..æŒ‰ä¸‹ä»»æ„é”®ç»§ç»­..\n')
+    input('\n..°´ÏÂÈÎÒâ¼ü¼ÌĞø..\n')
 
-#æµ‹è¯•åœ¨(row,col)ä¸Šçš„çš‡åæ˜¯å¦é­å—æ”»å‡»
-#è‹¥é­å—æ”»å‡»åˆ™è¿”å›å€¼ä¸º1,å¦åˆ™è¿”å›0
+#²âÊÔÔÚ(row,col)ÉÏµÄ»ÊºóÊÇ·ñÔâÊÜ¹¥»÷
+#ÈôÔâÊÜ¹¥»÷Ôò·µ»ØÖµÎª1,·ñÔò·µ»Ø0
 def attack(row,col):
     global queen
     i=0
@@ -31,7 +34,7 @@ def attack(row,col):
     while (atk!=1)and i<col:
         offset_col=abs(i-col)
         offset_row=abs(queen[i]-row)
-        #åˆ¤æ–­ä¸¤çš‡åæ˜¯å¦åœ¨åŒä¸€è¡Œæˆ–åœ¨åŒä¸€å¯¹è§’çº¿ä¸Š
+        #ÅĞ¶ÏÁ½»ÊºóÊÇ·ñÔÚÍ¬Ò»ĞĞ»òÔÚÍ¬Ò»¶Ô½ÇÏßÉÏ
         if queen[i]==row or offset_row==offset_col:
             atk=1
         i=i+1
@@ -49,5 +52,5 @@ def decide_position(value):
                 decide_position(value+1)
         i=i+1
 
-#ä¸»ç¨‹åº
+#Ö÷³ÌĞò
 decide_position(0)

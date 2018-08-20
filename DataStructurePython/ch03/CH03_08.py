@@ -1,31 +1,72 @@
+# coding:gbk
+
+
 class student:
     def __init__(self):
         self.name=''
         self.no=''
         self.next=None
-          
-head=student()  #æ–°å¢é“¾è¡¨å¤´å…ƒç´ 
-ptr = head    #è®¾ç½®å­˜å–æŒ‡é’ˆä½ç½®
-ptr.next = None    #ç›®å‰æ— ä¸€ä¸‹ä¸ªå…ƒç´ 
+
+head=student()  #ĞÂÔöÁ´±íÍ·ÔªËØ
+ptr = head    #ÉèÖÃ´æÈ¡Ö¸ÕëÎ»ÖÃ
+ptr.next = None    #Ä¿Ç°ÎŞÒ»ÏÂ¸öÔªËØ
 select=0
 while select!=2:
-    select=int(input('(1)æ–°å¢ (2)ç¦»å¼€ =>'))
+    select=int(input('(1)ĞÂÔö (2)Àë¿ª =>'))
     if select ==2:
         break
-    ptr.name=input('å§“å :')
-    ptr.no=input('å­¦å· :')
-    new_data=student() #æ–°å¢ä¸‹ä¸€å…ƒç´ 
-    ptr.next=new_data   #è¿æ¥ä¸‹ä¸€å…ƒç´ 
-    new_data.next = None  #ä¸‹ä¸€å…ƒç´ çš„nextå…ˆè®¾ç½®ä¸ºNone
-    ptr = new_data  #å­˜å–æŒ‡é’ˆè®¾ç½®ä¸ºæ–°å…ƒç´ æ‰€åœ¨ä½ç½®
+    ptr.name=input('ĞÕÃû :')
+    ptr.no=input('Ñ§ºÅ :')
+    new_data=student() #ĞÂÔöÏÂÒ»ÔªËØ
+    ptr.next=new_data   #Á¬½ÓÏÂÒ»ÔªËØ
+    new_data.next = None  #ÏÂÒ»ÔªËØµÄnextÏÈÉèÖÃÎªNone
+    ptr = new_data  #´æÈ¡Ö¸ÕëÉèÖÃÎªĞÂÔªËØËùÔÚÎ»ÖÃ
 
-ptr.next = head  #è®¾ç½®å­˜å–æŒ‡é’ˆä»å¤´å¼€å§‹
+ptr.next = head  #ÉèÖÃ´æÈ¡Ö¸Õë´ÓÍ·¿ªÊ¼
 print()
 ptr=head
 
 while True:
-     print('å§“åï¼š%s\tå­¦å·:%s\n' %(ptr.name,ptr.no))
-     ptr=ptr.next  #å°†headç§»å¾€ä¸‹ä¸€å…ƒç´ 
+     print('ĞÕÃû£º%s\tÑ§ºÅ:%s\n' %(ptr.name,ptr.no))
+     ptr=ptr.next  #½«headÒÆÍùÏÂÒ»ÔªËØ
      if ptr.next==head:
          break
 print('---------------------------------------------------------')
+
+
+# class student:
+#     def __init__(self):
+#         self.name = ''
+#         self.no = ''
+#         self.next = None
+#
+#
+# head = student()  # ĞÂÔöÁ´±íÍ·ÔªËØ
+# ptr = head  # ÉèÖÃ´æÈ¡Ö¸ÕëÎ»ÖÃ
+# ptr.name = 'test'
+# ptr.no = 0
+# ptr.next = None  # Ä¿Ç°ÎŞÒ»ÏÂ¸öÔªËØ
+# select = 0
+# while select != 2:
+#     select = int(input('(1)ĞÂÔö (2)Àë¿ª =>'))
+#     if select == 2:
+#         break
+#
+#     new_data = student()  # ĞÂÔöÏÂÒ»ÔªËØ
+#     new_data.name = input('ĞÕÃû :')
+#     new_data.no = input('Ñ§ºÅ :')
+#
+#     ptr.next = new_data  # Á¬½ÓÏÂÒ»ÔªËØ
+#     new_data.next = None  # ÏÂÒ»ÔªËØµÄnextÏÈÉèÖÃÎªNone
+#     ptr = new_data  # ´æÈ¡Ö¸ÕëÉèÖÃÎªĞÂÔªËØËùÔÚÎ»ÖÃ
+#
+# ptr.next = head  # ÉèÖÃ´æÈ¡Ö¸Õë´ÓÍ·¿ªÊ¼
+# print()
+# ptr = head
+#
+# while True:
+#     print('ĞÕÃû£º%s\tÑ§ºÅ:%s\n' % (ptr.name, ptr.no))
+#     ptr = ptr.next  # ½«headÒÆÍùÏÂÒ»ÔªËØ
+#     if ptr == head:    ############## ptr == head
+#         break
+# print('---------------------------------------------------------')

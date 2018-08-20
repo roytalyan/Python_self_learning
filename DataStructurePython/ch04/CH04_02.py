@@ -1,3 +1,6 @@
+# -*- coding: gbk -*-
+
+from __future__ import print_function
 import random
 global top
 
@@ -7,7 +10,7 @@ k=0
 def push(stack,MAX,val):
     global top
     if top>=MAX-1:
-        print('[å †æ ˆå·²ç»æ»¡äº†]')
+        print('[¶ÑÕ»ÒÑ¾­ÂúÁË]')
     else:
         top=top+1
         stack[top]=val
@@ -15,7 +18,7 @@ def push(stack,MAX,val):
 def pop(stack):
     global top
     if top<0:
-        print('[å †æ ˆå·²ç»ç©ºäº†]')
+        print('[¶ÑÕ»ÒÑ¾­¿ÕÁË]')
     else:
         top=top-1
         return stack[top]
@@ -34,31 +37,31 @@ stack=[0]*52
 for i in range(52):
     card[i]=i+1
 
-print('[æ´—ç‰Œä¸­...è¯·ç¨å€™!]')
+print('[Ï´ÅÆÖĞ...ÇëÉÔºò!]')
 
 card_new=shuffle(card)
 
 i=0
 while i!=52:
-    push(stack,52,card_new[i])  #å°†52å¼ ç‰Œå‹å…¥å †æ ˆ
+    push(stack,52,card_new[i])  #½«52ÕÅÅÆÑ¹Èë¶ÑÕ»
     i=i+1
 
-print('[é€†æ—¶é’ˆå‘ç‰Œ]')
-print('[æ˜¾ç¤ºå„å®¶çš„ç‰Œ] ä¸œå®¶\t  åŒ—å®¶\t   è¥¿å®¶\t    å—å®¶')
+print('[ÄæÊ±Õë·¢ÅÆ]')
+print('[ÏÔÊ¾¸÷¼ÒµÄÅÆ] ¶«¼Ò\t  ±±¼Ò\t   Î÷¼Ò\t    ÄÏ¼Ò')
 print('=================================')
 
 while top>=0:
     #print(stack[top])
-    style = (stack[top]) % 4	#è®¡ç®—ç‰Œçš„èŠ±è‰²
+    style = (stack[top]) % 4	#¼ÆËãÅÆµÄ»¨É«
     #print('style=', style)
-    if style==0:  #æ¢…èŠ±
+    if style==0:  #Ã·»¨
         ascVal='club'
-    elif style==1:  #æ–¹å—
+    elif style==1:  #·½¿é
         ascVal='diamond'
-    elif style==2:   #çº¢å¿ƒ
+    elif style==2:   #ºìĞÄ
         ascVal='heart'
     elif style==3:
-        ascVal='spade'   #é»‘æ¡ƒ
+        ascVal='spade'   #ºÚÌÒ
     
     print('[%s%3d]\t' %(ascVal,stack[top]%13+1),end='')
     if top%4==0:

@@ -41,16 +41,19 @@ class Fibs3:
         return self
 
 
-
-    fib3 = Fibs3()
-    for f in fib3:
-        if f > 1000:
-            print f
-            break
-
+    #
+    # fib3 = Fibs3()
+    # for f in fib3:
+    #     if f > 1000:
+    #         print f
+    #         break
+    #
 
 if __name__ == '__main__':
-    test()
+    pass
+
+fib = Fibs1()
+print fib.fib(5)
 
 # fib1 = Fibs1()
 # print fib1.fib(15)
