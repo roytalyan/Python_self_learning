@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 #=============== Program Description ===============
 #程序目的： 老鼠走迷宫
 

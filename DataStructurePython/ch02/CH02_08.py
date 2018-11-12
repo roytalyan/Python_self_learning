@@ -1,4 +1,6 @@
-# [示范]:上三角矩阵 
+from __future__ import print_function
+
+# [示范]:上三角矩阵
 global ARRAY_SIZE #矩阵的维数大小
 ARRAY_SIZE=5
 #一维数组的数组声明

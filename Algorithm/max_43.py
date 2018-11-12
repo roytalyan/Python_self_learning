@@ -21,4 +21,4 @@ def maxR(arr):
         sub_max = arr[1:]
         return maxR(sub_max)
 
-print maxR(arrr)
+print maxR(arr)

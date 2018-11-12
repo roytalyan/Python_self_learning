@@ -46,5 +46,5 @@ class Solution1(object):
             return 0
         return y * cmp(x, 0)  # cmp() if x > 0 : 1 ; if x < 0 : -1
 
-s = Solution1()
+s = Solution()
 print s.reverse(x)

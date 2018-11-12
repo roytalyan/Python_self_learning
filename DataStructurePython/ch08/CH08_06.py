@@ -1,3 +1,6 @@
+# coding:utf-8
+from __future__ import print_function
+
 # 合并排序法(Merge Sort)
 
 #99999为数列1的结束数字不列入排序

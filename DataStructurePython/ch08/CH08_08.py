@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 def heap(data,size):
     for i in range(int(size/2),0,-1):#建立堆积树节点
         ad_heap(data,i,size-1)
