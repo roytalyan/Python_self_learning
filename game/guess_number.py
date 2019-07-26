@@ -1,11 +1,13 @@
 import random
-
+import os
 
 def create_answer():
     pool = list(range(0, 10))
     answer = random.sample(pool, 4)
-    return answer  # e.g: '1234'
-
+    answer_str = ''
+    for i in answer:
+        answer_str += str(i)
+    return answer_str  # e.g: '1234'
 
 def compare(a, b):
     # a is user answer
@@ -22,7 +24,7 @@ def compare(a, b):
             index += 1
         else:
             index += 1
-    return [str(aa)+'A', str(bb)+'B']
+    return str(aa)+'A', str(bb)+'B'
 
 
 def check_dup(a):
@@ -60,7 +62,7 @@ def run():
             k += 1
             continue
         elif user_input_answer == 'i am your dad':
-            print ('answer: ' + correct_answer + '\nCongradulation!')
+            print ('answer: ' + str(correct_answer) + '\nCongradulation!')
             return
 
         try:
@@ -92,12 +94,18 @@ def run():
             print (compare(user_answer_list, list(correct_answer)))
             i -= 1
 
-    print ('answer is: ' + correct_answer + '\nfail')
+    print ('answer is: ' + str(correct_answer) + '\nfail')
 
 
 def main():
-    run()
-
+    play = True
+    while play:
+        run()
+        again = str(raw_input("\nplay again? 'y' or 'n'")).lower()
+        if not again in ['1', 'y', 'yes', 'sure']:
+            break
+        else:
+            os.system('cls')
 
 if __name__ == "__main__":
     main()
